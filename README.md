@@ -10,6 +10,9 @@ configurations.
 
 ## Supported Printers and Configurations
 
+**Note:** The output from these profiles is currently not as
+good as the output from the LulzBot profiles in Cura.
+
   * LulzBot Taz 6 Single Extruder (0.50mm)
   * LulzBot Taz 6 Single Extruder (0.25mm)
 
