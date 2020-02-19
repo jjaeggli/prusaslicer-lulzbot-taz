@@ -10,11 +10,10 @@ configurations.
 
 ## Supported Printers and Configurations
 
-**Note:** The output from these profiles is currently not as
-good as the output from the LulzBot profiles in Cura.
-
+  * LulzBot Taz 5 Single Extruder (0.50mm)
   * LulzBot Taz 6 Single Extruder (0.50mm)
-  * LulzBot Taz 6 Single Extruder (0.25mm)
+  * LulzBot Taz Mini Single Extruder (0.50mm)
+  * LulzBot Taz Mini 2 Aero (0.50mm)
 
 ## Installation
 
@@ -24,7 +23,15 @@ PrusaSlicer interface. To import the file, select **File** > **Import** >
 
 ## Notes
 
-  * Wipe temperatures for calibration are currently hard-coded for PLA at
-    160&deg;. For materials which require higher or lower nozzle cleaning
-    temperatures, `start_gcode` will need to be adjusted manually for the
-    necessary wiping temperature.
+  * Wipe temperatures for calibration use an expression based on the bed and
+    nozzle temperature of the material. This gets reasonably close to correct
+    wipe temperatures for common materials such as PLA. However, for materials
+    with some higher printing temperatures don't precisely fit the curve.
+
+    ```
+    {temperature[0] * 0.848 + bed_temperature[0] * 0.135 - 36.8}
+    ```
+
+    To guarantee that the nozzle is clean, the print will pause following wipe
+    and before probe in all Taz models capable of automatic probing. Probe
+    temperature is fixed at 145 deg C.
