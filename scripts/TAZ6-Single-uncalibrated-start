@@ -1,0 +1,20 @@
+; This G-Code has been generated specifically for the LulzBot TAZ 6 with single extruder
+; This shortened startup procedure removes calibration from the printing process and should
+; only be used with a calibrated printer.
+M73 P0 ; clear GLCD progress bar
+M75 ; start GLCD timer
+G26 ; clear potential 'probe fail' condition
+M420 S1 ; activate bed level matrix
+G90 ; absolute positioning
+M425 Z ; use measured Z backlash for compensation
+M425 Z F0 ; turn off measured Z backlash compensation. (if activated in the quality settings, this command will automatically be ignored)
+G1 X150 Y-10 Z10 ; move nozzle to front for heating
+M117 Heating... ; progress indicator message on LCD
+M109 R{first_layer_temperature[0]} ; wait for extruder to reach printing temp
+M190 R{bed_temperature[0]} ; wait for bed to reach printing temp
+M82 ; set extruder to absolute mode
+G92 E-5 ; set extruder position to -5
+G1 Z2 E0 F75 ; prime tiny bit of filament into the nozzle
+M400 ; wait for moves to finish
+M117 TAZ 6 Printing... ; progress indicator message on LCD
+; END_START_GCODE
