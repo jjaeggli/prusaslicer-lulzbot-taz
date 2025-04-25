@@ -8,7 +8,7 @@ M420 S1 ; activate bed level matrix
 G90 ; absolute positioning
 M425 Z ; use measured Z backlash for compensation
 M425 Z F0 ; turn off measured Z backlash compensation. (if activated in the quality settings, this command will automatically be ignored)
-G1 X150 Y-10 Z10 ; move nozzle to front for heating
+G1 X150 Y-15 Z10 ; move nozzle to front for heating
 M117 Heating... ; progress indicator message on LCD
 M109 R{first_layer_temperature[0]} ; wait for extruder to reach printing temp
 M190 R{bed_temperature[0]} ; wait for bed to reach printing temp

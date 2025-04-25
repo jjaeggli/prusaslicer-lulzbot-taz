@@ -5,9 +5,8 @@ LulzBot TAZ printer and material profiles for use with PrusaSlicer.
 ## Objective
 
 This project intends to create standard LulzBot Taz printer profiles for use
-with PrusaSlicer. The profiles here are derived from the LulzBot Cura defaults
-with some modifications based on the behavior and style of PrusaSlicer
-configurations.
+with PrusaSlicer. The profiles were originally derived from the LulzBot Cura
+defaults and have evolved based on PrusaSlicer features and changes.
 
 ## Supported Printers and Configurations
 
@@ -23,6 +22,12 @@ PrusaSlicer interface. To import the file, select **File** > **Import** >
 **Import Config Bundle ...** and select the downloaded configuration file.
 
 ## Notes
+
+  * 2024-04-24: Updated profiles to work with PrusaSlicer 2.9.2. Adjusted
+    speed and quality parameters based on testing. Specifically, settings
+    for PolyLite PLA increased cooling to reduce swelling and distortion.
+    Speeds were increased for the *0.4mm High Speed Taz* profile, which still
+    provides reasonably good quality for larger structural prints.
 
   * Wipe temperatures for calibration use an expression based on the bed and
     nozzle temperature of the material. This gets reasonably close to correct
